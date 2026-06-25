@@ -26,7 +26,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ===== HEADER (FIX ใหม่) ===== */
+/* ===== HEADER ===== */
 header{
 position:fixed;
 top:0;
@@ -47,7 +47,6 @@ align-items:center;
 gap:10px;
 }
 
-/* ❌ เอาโลโก้ออกแล้วเหลือแค่ชื่อ */
 .logo-area{
 display:flex;
 align-items:center;
@@ -60,13 +59,15 @@ color:#ff7a00;
 white-space:nowrap;
 }
 
-/* ===== MENU FIX ไม่ให้ล้น ===== */
+/* ===== MENU FIX ===== */
 .nav-menu{
 display:flex;
-flex-wrap:wrap;   /* สำคัญ */
+flex-wrap:nowrap;
 gap:10px;
 justify-content:flex-end;
 max-width:70%;
+overflow-x:auto;
+white-space:nowrap;
 }
 
 .nav-menu a{
@@ -77,6 +78,7 @@ white-space:nowrap;
 padding:6px 10px;
 border-radius:20px;
 transition:.3s;
+flex-shrink:0;
 }
 
 .nav-menu a:hover{
@@ -126,11 +128,13 @@ border-radius:50px;
 
 /* ===== SECTION ===== */
 section{padding:100px 10%;}
+
 .section-title{
 text-align:center;
 font-size:42px;
 color:#ff7a00;
 margin-bottom:50px;
+width:100%;
 }
 
 /* ===== ABOUT ===== */
@@ -159,13 +163,48 @@ transition:.8s;
 
 .about-image img.active{opacity:1;}
 
-/* ===== MOBILE ===== */
+/* ===== SERVICES FIX ===== */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+gap:25px;
+justify-content:center;
+}
+
+.service-card{
+background:#1a1a1a;
+padding:30px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,122,0,.2);
+}
+
+/* ===== CONTACT FIX ===== */
+.contact-box{
+max-width:800px;
+margin:auto;
+background:#1a1a1a;
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:30px;
+background:black;
+border-top:2px solid #ff7a00;
+}
+
+/* ===== MOBILE FIX ===== */
 @media(max-width:768px){
 
 .nav-menu{
-flex-wrap:wrap;
+flex-wrap:nowrap;
 max-width:100%;
-justify-content:center;
+justify-content:flex-start;
+overflow-x:auto;
 }
 
 .nav-menu a{
@@ -194,6 +233,22 @@ section{
 padding:60px 20px;
 }
 
+/* SERVICES MOBILE */
+.services-grid{
+grid-template-columns:1fr;
+justify-items:center;
+}
+
+.service-card{
+width:100%;
+max-width:350px;
+}
+
+/* CONTACT MOBILE */
+.contact-box{
+width:100%;
+}
+
 }
 
 </style>
@@ -204,7 +259,6 @@ padding:60px 20px;
 <header>
 <div class="navbar">
 
-<!-- ❌ เอาโลโก้ออก เหลือแค่ชื่อ -->
 <div class="logo-area">
 <div class="company-name">IRM<span style="color:white;">Extra</span></div>
 </div>
@@ -261,6 +315,7 @@ padding:60px 20px;
 </section>
 
 <section id="services">
+
 <h2 class="section-title">บริการของเรา</h2>
 
 <div class="services-grid">
@@ -281,6 +336,7 @@ padding:60px 20px;
 </div>
 
 </div>
+
 </section>
 
 <section id="contact">
