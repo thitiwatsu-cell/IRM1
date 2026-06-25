@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ฟอร์มสมัครงาน | IRM Extra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Kanit',sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#000;
+    padding:30px;
+    text-align:center;
+    border-bottom:3px solid #ff7a00;
+    box-shadow:0 2px 10px rgba(0,0,0,0.4);
+}
+
+h1{
+    color:#ff7a00;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.section{
+    background:#1a1a1a;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:12px;
+    border-left:5px solid #ff7a00;
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+.section h2{
+    color:#ff7a00;
+    margin-bottom:15px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    color:#ddd;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #444;
+    background:#222;
+    color:white;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline:none;
+    border-color:#ff7a00;
+    box-shadow:0 0 5px rgba(255,122,0,0.4);
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.checkbox-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    color:#ccc;
+}
+
+.btn{
+    width:100%;
+    padding:15px;
+    background:#ff7a00;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:30px;
+    cursor:pointer;
+    margin-top:20px;
+    transition:0.2s;
+}
+
+.btn:hover{
+    background:#e56c00;
+}
+
+small{
+    color:#aaa;
+    font-size:12px;
+}
+
+/* camera */
+video{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:10px;
+}
+
+img{
+    width:100%;
+    margin-top:10px;
+    border-radius:12px;
+    display:none;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#666;
+    margin-top:20px;
+    border-top:1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ฟอร์มสมัครงานออนไลน์ IRM Extra</h1>
+</header>
+
+<div class="container">
+
+<!-- ข้อมูลส่วนตัว -->
+<div class="section">
+<h2>ข้อมูลส่วนตัว</h2>
+
+<div class="row">
+<div class="form-group">
+<label>ชื่อ-นามสกุล</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>วัน/เดือน/ปีเกิด</label>
+<input type="date">
+</div>
+</div>
+
+<div class="row">
+<div class="form-group">
+<label>อายุ</label>
+<input type="number">
+</div>
+
+<div class="form-group">
+<label>น้ำหนัก / ส่วนสูง</label>
+<input type="text">
+</div>
+</div>
+
+<div class="form-group">
+<label>เชื้อชาติ</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>สัญชาติ</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>ศาสนา</label>
+<input type="text">
+</div>
+
+</div>
+
+<!-- 📸 รูปถ่ายผู้สมัคร -->
+<div class="section">
+<h2>รูปถ่ายผู้สมัคร</h2>
+
+<video id="video" autoplay></video>
+
+<button type="button" class="btn" onclick="startCamera()">เปิดกล้อง</button>
+<button type="button" class="btn" onclick="takePhoto()">ถ่ายภาพ</button>
+<button type="button" class="btn" onclick="stopCamera()" style="background:#444;">
+ปิดกล้อง
+</button>
+
+<canvas id="canvas" style="display:none;"></canvas>
+<img id="preview">
+<input type="hidden" id="photoData">
+</div>
+
+<!-- การศึกษา -->
+<div class="section">
+<h2>การศึกษา</h2>
+
+<div class="form-group">
+<label>ระดับการศึกษา</label>
+<select>
+<option>ต่ำกว่ามัธยมศึกษา</option>
+<option>มัธยมศึกษา</option>
+<option>ปวช.</option>
+<option>ปวส.</option>
+<option>ปริญญาตรี</option>
+<option>ปริญญาโท</option>
+<option>ปริญญาเอก</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>สถาบันการศึกษา</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>สาขาวิชา</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>ปีที่จบการศึกษา</label>
+<input type="number">
+</div>
+
+<div class="form-group">
+<label>วุติการศึกษา</label>
+<input type="file">
+</div>
+
+</div>
+
+<!-- เอกสาร -->
+<div class="section">
+<h2>ข้อมูลเอกสาร</h2>
+
+<div class="form-group">
+<label>เลขบัตรประชาชน</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>ออกให้โดย (อำเภอ)</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>จังหวัด</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>สำเนาบัตรประชาชน</label>
+<input type="file">
+</div>
+
+</div>
+
+<!-- ที่อยู่ -->
+<div class="section">
+<h2>ที่อยู่</h2>
+
+<div class="form-group">
+<label>ที่อยู่ตามทะเบียนบ้าน</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group">
+<label>ที่อยู่ปัจจุบัน</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group">
+<label>สำเนาทะเบียนบ้าน</label>
+<input type="file">
+</div>
+
+</div>
+
+<!-- ติดต่อ -->
+<div class="section">
+<h2>ข้อมูลติดต่อ</h2>
+
+<div class="row">
+<div class="form-group">
+<label>โทรศัพท์</label>
+<input type="tel">
+</div>
+
+<div class="form-group">
+<label>E-mail</label>
+<input type="email">
+</div>
+</div>
+
+</div>
+
+<!-- ทหาร -->
+<div class="section">
+<h2>สถานภาพทางทหาร</h2>
+
+<div class="checkbox-group">
+<label><input type="checkbox"> ได้รับการยกเว้น</label>
+<label><input type="checkbox"> จับได้ใบดำ</label>
+<label><input type="checkbox"> ผ่านนักศึกษาวิชาทหาร</label>
+<label><input type="checkbox"> อื่นๆ</label>
+</div>
+
+</div>
+
+<!-- ครอบครัว -->
+<div class="section">
+<h2>ข้อมูลครอบครัว</h2>
+
+<div class="form-group">
+<label>บิดา - ชื่อ/นามสกุล</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>มารดา - ชื่อ/นามสกุล</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>อาชีพ</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>เบอร์โทร</label>
+<input type="tel">
+</div>
+
+</div>
+
+<!-- สมรส -->
+<div class="section">
+<h2>สถานภาพสมรส</h2>
+
+<div class="checkbox-group">
+<label><input type="checkbox"> โสด</label>
+<label><input type="checkbox"> แต่งงาน</label>
+<label><input type="checkbox"> หม้าย</label>
+<label><input type="checkbox"> หย่า</label>
+</div>
+
+</div>
+
+<!-- ฉุกเฉิน -->
+<div class="section">
+<h2>บุคคลติดต่อฉุกเฉิน</h2>
+
+<div class="form-group">
+<label>ชื่อ / ที่อยู่ / ที่ทำงาน</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group">
+<label>เบอร์โทร</label>
+<input type="tel">
+</div>
+
+</div>
+
+<!-- เงินเดือน -->
+<div class="section">
+<h2>เงินเดือนที่ต้องการ</h2>
+
+<div class="form-group">
+<label>ระบุเงินเดือน (บาท/เดือน)</label>
+<input type="number">
+</div>
+
+</div>
+
+<!-- ปุ่มส่ง -->
+<div style="margin-top:30px;">
+<button class="btn" onclick="window.location.href='success.html'">
+ยืนยันข้อมูลทั้งหมดและส่งใบสมัคร
+</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 IRM Extra
+</footer>
+
+<script>
+let stream;
+
+// เปิดกล้อง
+function startCamera(){
+    const video = document.getElementById('video');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+    .then(s => {
+        stream = s;
+        video.srcObject = stream;
+    })
+    .catch(err => {
+        alert("เปิดกล้องไม่ได้: " + err);
+    });
+}
+
+// ปิดกล้อง
+function stopCamera(){
+    const video = document.getElementById('video');
+
+    if(stream){
+        stream.getTracks().forEach(track => track.stop());
+        video.srcObject = null;
+        stream = null;
+    }
+}
+
+// ถ่ายภาพ
+function takePhoto(){
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const preview = document.getElementById('preview');
+    const photoData = document.getElementById('photoData');
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0);
+
+    const dataURL = canvas.toDataURL('image/png');
+
+    preview.src = dataURL;
+    preview.style.display = "block";
+
+    photoData.value = dataURL;
+}
+</script>
+
+</body>
+</html>
