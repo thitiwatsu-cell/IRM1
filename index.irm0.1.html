@@ -26,7 +26,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ===== HEADER FIX ===== */
+/* ===== HEADER (FIX ใหม่) ===== */
 header{
 position:fixed;
 top:0;
@@ -36,29 +36,21 @@ background:rgba(0,0,0,.85);
 backdrop-filter:blur(10px);
 z-index:999;
 border-bottom:1px solid rgba(255,122,0,.2);
-overflow:hidden;
 }
 
 .navbar{
 width:100%;
-padding:10px 12px;
+padding:10px 15px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:nowrap;
+gap:10px;
 }
 
+/* ❌ เอาโลโก้ออกแล้วเหลือแค่ชื่อ */
 .logo-area{
 display:flex;
 align-items:center;
-gap:10px;
-min-width:0;
-}
-
-.logo img{
-height:65px;
-width:auto;
-display:block;
 }
 
 .company-name{
@@ -68,27 +60,28 @@ color:#ff7a00;
 white-space:nowrap;
 }
 
-.company-name span{
-color:white;
-}
-
+/* ===== MENU FIX ไม่ให้ล้น ===== */
 .nav-menu{
 display:flex;
-gap:18px;
-flex-wrap:nowrap;
-white-space:nowrap;
+flex-wrap:wrap;   /* สำคัญ */
+gap:10px;
+justify-content:flex-end;
+max-width:70%;
 }
 
 .nav-menu a{
 text-decoration:none;
 color:white;
-transition:.3s;
-font-size:14px;
+font-size:13px;
 white-space:nowrap;
+padding:6px 10px;
+border-radius:20px;
+transition:.3s;
 }
 
 .nav-menu a:hover{
-color:#ff7a00;
+background:#ff7a00;
+color:white;
 }
 
 /* ===== HERO ===== */
@@ -96,15 +89,11 @@ color:#ff7a00;
 height:100vh;
 min-height:100vh;
 background:
-linear-gradient(
-rgba(0,0,0,.25),
-rgba(0,0,0,.45)),
+linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),
 url("CONDO.png");
 
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
-
 display:flex;
 justify-content:center;
 align-items:center;
@@ -119,25 +108,11 @@ padding:60px;
 border-radius:30px;
 max-width:950px;
 width:100%;
-border:1px solid rgba(255,255,255,.15);
 }
 
-.hero h1{
-font-size:90px;
-color:#ff8c1a;
-margin-bottom:15px;
-}
-
-.hero h2{
-font-size:36px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-line-height:1.8;
-color:#f0f0f0;
-}
+.hero h1{font-size:90px;color:#ff8c1a;}
+.hero h2{font-size:36px;margin:15px 0;}
+.hero p{font-size:20px;}
 
 .btn{
 display:inline-block;
@@ -147,14 +122,10 @@ background:#ff7a00;
 color:white;
 text-decoration:none;
 border-radius:50px;
-font-weight:600;
 }
 
-/* ===== SECTIONS ===== */
-section{
-padding:100px 10%;
-}
-
+/* ===== SECTION ===== */
+section{padding:100px 10%;}
 .section-title{
 text-align:center;
 font-size:42px;
@@ -171,123 +142,56 @@ align-items:center;
 }
 
 .about-image{
-width:100%;
 height:500px;
+position:relative;
 overflow:hidden;
 border-radius:20px;
-position:relative;
 }
 
 .about-image img{
-width:100%;
-height:500px;
-object-fit:cover;
 position:absolute;
-top:0;
-left:0;
+width:100%;
+height:100%;
+object-fit:cover;
 opacity:0;
-transition:opacity 0.8s ease-in-out;
+transition:.8s;
 }
 
-.about-image img.active{
-opacity:1;
-}
+.about-image img.active{opacity:1;}
 
-/* ===== VISION ===== */
-.vision{
-background:linear-gradient(135deg,#ff7a00,#ff9900);
-text-align:center;
-}
-
-/* ===== SERVICES ===== */
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.service-card{
-background:#1a1a1a;
-padding:30px;
-border-radius:20px;
-text-align:center;
-border:1px solid rgba(255,122,0,.2);
-}
-
-/* ===== CONTACT ===== */
-.contact-box{
-max-width:800px;
-margin:auto;
-background:#1a1a1a;
-padding:40px;
-border-radius:20px;
-text-align:center;
-}
-
-/* ===== FOOTER ===== */
-footer{
-text-align:center;
-padding:30px;
-background:black;
-border-top:2px solid #ff7a00;
-}
-
-/* ===== MOBILE FIX (ตัวจบจริง) ===== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
 .nav-menu{
-display:none !important;
+flex-wrap:wrap;
+max-width:100%;
+justify-content:center;
 }
 
-.logo img{
-height:55px;
+.nav-menu a{
+font-size:12px;
+padding:5px 8px;
 }
 
 .company-name{
 font-size:20px;
 }
 
-.hero{
-height:100svh;
-min-height:100svh;
-padding:15px;
-}
+.hero h1{font-size:42px;}
+.hero h2{font-size:20px;}
+.hero p{font-size:14px;}
 
 .hero-content{
 padding:25px;
 border-radius:20px;
 }
 
-.hero h1{
-font-size:42px;
-}
-
-.hero h2{
-font-size:20px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-section{
-padding:60px 20px;
-}
-
-.section-title{
-font-size:28px;
-}
-
 .about-container{
 grid-template-columns:1fr;
 }
 
-.about-image{
-height:250px;
-}
-
-.about-image img{
-height:250px;
+section{
+padding:60px 20px;
 }
 
 }
@@ -300,14 +204,9 @@ height:250px;
 <header>
 <div class="navbar">
 
+<!-- ❌ เอาโลโก้ออก เหลือแค่ชื่อ -->
 <div class="logo-area">
-<div class="logo">
-<img src="IRM2.png" alt="IRM Logo">
-</div>
-
-<div class="company-name">
-IRM<span>Extra</span>
-</div>
+<div class="company-name">IRM<span style="color:white;">Extra</span></div>
 </div>
 
 <div class="nav-menu">
@@ -321,27 +220,22 @@ IRM<span>Extra</span>
 </header>
 
 <section class="hero">
+
 <div class="hero-content">
 
 <h1>IRM EXTRA</h1>
 
-<h2>
-เราดูแลทุกวัน<br>
-เพื่อให้โครงการน่าอยู่ในทุกช่วงเวลา
-</h2>
+<h2>เราดูแลทุกวัน<br>เพื่อให้โครงการน่าอยู่ในทุกช่วงเวลา</h2>
 
-<p>
-ผู้เชี่ยวชาญด้านการบริหารจัดการนิติบุคคลอาคารชุด
-และนิติบุคคลหมู่บ้านจัดสรรอย่างมืออาชีพ
-</p>
+<p>ผู้เชี่ยวชาญด้านการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรร</p>
 
 <a href="#about" class="btn">เกี่ยวกับบริษัท</a>
 
 </div>
+
 </section>
 
 <section id="about">
-
 <h2 class="section-title">เกี่ยวกับบริษัท</h2>
 
 <div class="about-container">
@@ -354,86 +248,66 @@ IRM<span>Extra</span>
 
 <div class="about-text">
 <h2>IRM Extra</h2>
-
-<p>บริษัท IRM Extra ให้บริการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรรอย่างครบวงจรด้วยทีมงานมืออาชีพ</p>
-
-<p>เรามุ่งเน้นการบริหารงานอย่างโปร่งใส มีประสิทธิภาพ และสร้างความพึงพอใจสูงสุดให้แก่ลูกค้า</p>
+<p>บริษัท IRM Extra ให้บริการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรร</p>
+<p>เรามุ่งเน้นความโปร่งใสและประสิทธิภาพสูงสุด</p>
 </div>
 
 </div>
-
 </section>
 
 <section class="vision">
 <h2>วิสัยทัศน์</h2>
-<p>เป็นผู้นำด้านการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรรที่ได้รับความไว้วางใจสูงสุดในประเทศไทย</p>
+<p>เป็นผู้นำด้านการบริหารจัดการนิติบุคคลในประเทศไทย</p>
 </section>
 
 <section id="services">
-
 <h2 class="section-title">บริการของเรา</h2>
 
 <div class="services-grid">
 
 <div class="service-card">
 <h3>คอนโดมิเนียม</h3>
-<p>บริหารนิติบุคคลอาคารชุดครบวงจร</p>
+<p>บริหารครบวงจร</p>
 </div>
 
 <div class="service-card">
 <h3>หมู่บ้านจัดสรร</h3>
-<p>บริหารนิติบุคคลหมู่บ้านอย่างมืออาชีพ</p>
+<p>ดูแลระบบนิติบุคคล</p>
 </div>
 
 <div class="service-card">
 <h3>การเงินและบัญชี</h3>
-<p>จัดการงบประมาณและรายงานทางการเงิน</p>
+<p>รายงานครบถ้วน</p>
 </div>
 
 </div>
-
 </section>
 
 <section id="contact">
-
 <h2 class="section-title">ติดต่อเรา</h2>
 
-<div class="contact-box" style="text-align:left;">
+<div class="contact-box">
 
-<h3 style="color:#ff7a00;margin-bottom:20px;text-align:center;">
-IRM EXTRA
-</h3>
-
-<p>บริษัท บริษัท ไอ อาร์ เอ็ม เอ็กซ์ตร้า จำกัด</p>
-<p>ที่อยู่ : 1694 ถนนมิตภาพ ตำบลในเมือง อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา 30000</p>
-<p>โทร: 09-8105-6952, 09-8750-5695</p>
+<p>IRM Extra Property Management</p>
+<p>โทร: 09-8105-6952</p>
 <p>Email: info@irmextra.com</p>
-<p>Website: www.irmextra.com</p>
 
 </div>
-
 </section>
 
 <footer>
-<h3 style="color:#ff7a00;">บริษัท ไอ อาร์ เอ็ม เอ็กซ์ตร้า จำกัด<br>IRM EXTRA</h3>
-<p>© 2026 IRM Extra</p>
+<p style="color:#ff7a00;">IRM EXTRA © 2026</p>
 </footer>
 
 <script>
 let index = 0;
 const slides = document.querySelectorAll(".slide");
 
-function showSlide() {
-    slides.forEach((img, i) => {
-        img.classList.remove("active");
-        if (i === index) img.classList.add("active");
-    });
-
-    index++;
-    if (index >= slides.length) index = 0;
-}
-
-setInterval(showSlide, 1500);
+setInterval(() => {
+slides.forEach((img,i)=>img.classList.remove("active"));
+slides[index].classList.add("active");
+index = (index+1)%slides.length;
+},1500);
 </script>
 
 </body>
