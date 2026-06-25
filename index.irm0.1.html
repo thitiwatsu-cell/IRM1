@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IRM Extra</title>
+<title>IRM Extra Property Management</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -15,10 +15,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Kanit',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 body{
@@ -33,217 +29,15 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(0,0,0,.88);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,.9);
 z-index:9999;
-border-bottom:1px solid rgba(255,122,0,.25);
 }
 
 .navbar{
-max-width:1400px;
-margin:auto;
-padding:10px 25px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-}
-
-.logo-area{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
-height:80px;
-}
-
-.company-name{
-font-size:34px;
-font-weight:700;
-color:#ff7a00;
-}
-
-.company-name span{
-color:#fff;
-}
-
-.nav-menu{
-display:flex;
-gap:25px;
-}
-
-.nav-menu a{
-text-decoration:none;
-color:#fff;
-transition:.3s;
-}
-
-.nav-menu a:hover{
-color:#ff7a00;
-}
-
-/* ================= HERO ================= */
-.hero{
-min-height:100vh;
-padding:140px 20px 60px;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-url("CONDO.png");
-background-size:cover;
-background-position:center;
-}
-
-.hero-content{
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(5px);
-padding:50px;
-border-radius:30px;
-max-width:1000px;
-width:100%;
-border:1px solid rgba(255,255,255,.15);
-}
-
-.hero h1{
-font-size:80px;
-color:#ff8c1a;
-}
-
-.hero h2{
-font-size:34px;
-margin:20px 0;
-}
-
-.hero p{
-font-size:18px;
-line-height:1.8;
-}
-
-/* ================= BUTTON ================= */
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#ff7a00;
-color:#fff;
-border-radius:50px;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn:hover{
-background:#ff9d3c;
-}
-
-/* ================= SECTIONS ================= */
-section{
-padding:100px 10%;
-}
-
-.section-title{
-text-align:center;
-font-size:40px;
-color:#ff7a00;
-margin-bottom:50px;
-}
-
-/* ================= ABOUT ================= */
-.about-container{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.about-image{
-height:450px;
-position:relative;
-overflow:hidden;
-border-radius:20px;
-}
-
-.about-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-position:absolute;
-opacity:0;
-transition:.8s;
-}
-
-.about-image img.active{
-opacity:1;
-}
-
-.about-text h2{
-color:#ff7a00;
-margin-bottom:15px;
-}
-
-/* ================= VISION ================= */
-.vision{
-background:linear-gradient(135deg,#ff7a00,#ff9900);
-text-align:center;
-padding:80px 10%;
-}
-
-/* ================= SERVICES ================= */
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.service-card{
-background:#1a1a1a;
-padding:30px;
-border-radius:20px;
-text-align:center;
-border:1px solid rgba(255,122,0,.2);
-}
-
-/* ================= CONTACT ================= */
-.contact-box{
-max-width:800px;
-margin:auto;
-background:#1a1a1a;
-padding:40px;
-border-radius:20px;
-}
-
-/* ================= FOOTER ================= */
-footer{
-text-align:center;
-padding:30px;
-background:#000;
-border-top:2px solid #ff7a00;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:1024px){
-
-.hero h1{
-font-size:60px;
-}
-
-.about-container{
-grid-template-columns:1fr;
-}
-
-.about-image{
-height:350px;
-}
-
-}
-
-@media(max-width:768px){
-
-.nav-menu{
-display:none;
+padding:10px 20px;
 }
 
 .logo img{
@@ -251,7 +45,136 @@ height:60px;
 }
 
 .company-name{
-font-size:22px;
+font-size:24px;
+color:#ff7a00;
+font-weight:bold;
+}
+
+/* MENU DESKTOP */
+.nav-menu{
+display:flex;
+gap:20px;
+}
+
+.nav-menu a{
+color:#fff;
+text-decoration:none;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:#fff;
+}
+
+/* ================= HERO ================= */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px;
+background:url("CONDO.png") center/cover;
+}
+
+.hero-content{
+background:rgba(0,0,0,.5);
+padding:40px;
+border-radius:20px;
+max-width:900px;
+width:100%;
+}
+
+.hero h1{
+font-size:70px;
+color:#ff7a00;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+margin-top:10px;
+}
+
+/* ================= SECTIONS ================= */
+section{
+padding:80px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:32px;
+color:#ff7a00;
+margin-bottom:30px;
+}
+
+/* ================= GRID ================= */
+.about-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.about-image img{
+width:100%;
+border-radius:15px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.service-card{
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+/* ================= CONTACT ================= */
+.contact-box{
+background:#1a1a1a;
+padding:30px;
+border-radius:15px;
+max-width:700px;
+margin:auto;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+.nav-menu{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+right:0;
+background:#111;
+width:200px;
+padding:20px;
+}
+
+.nav-menu.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.about-container{
+grid-template-columns:1fr;
+}
+
+.services-grid{
+grid-template-columns:1fr;
 }
 
 .hero h1{
@@ -259,31 +182,7 @@ font-size:40px;
 }
 
 .hero h2{
-font-size:22px;
-}
-
-section{
-padding:70px 20px;
-}
-
-}
-
-@media(max-width:480px){
-
-.hero h1{
-font-size:32px;
-}
-
-.hero h2{
-font-size:18px;
-}
-
-.hero-content{
-padding:25px;
-}
-
-.about-image{
-height:250px;
+font-size:20px;
 }
 
 }
@@ -296,17 +195,11 @@ height:250px;
 <header>
 <div class="navbar">
 
-<div class="logo-area">
-<div class="logo">
-<img src="IRM2.png">
-</div>
+<div class="logo">IRM Extra</div>
 
-<div class="company-name">
-IRM<span>Extra</span>
-</div>
-</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<div class="nav-menu">
+<div class="nav-menu" id="navMenu">
 <a href="#about">เกี่ยวกับเรา</a>
 <a href="#services">บริการ</a>
 <a href="#contact">ติดต่อ</a>
@@ -317,91 +210,48 @@ IRM<span>Extra</span>
 </header>
 
 <section class="hero">
-
 <div class="hero-content">
 <h1>IRM EXTRA</h1>
-<h2>เราดูแลทุกวัน เพื่อให้โครงการน่าอยู่</h2>
-<p>ผู้เชี่ยวชาญด้านการบริหารนิติบุคคลอาคารชุดและหมู่บ้านจัดสรร</p>
-
-<a href="#about" class="btn">เกี่ยวกับเรา</a>
+<h2>บริหารนิติบุคคลอย่างมืออาชีพ</h2>
+<p>ดูแลโครงการให้มีประสิทธิภาพสูงสุด</p>
 </div>
-
 </section>
 
 <section id="about">
-<h2 class="section-title">เกี่ยวกับบริษัท</h2>
-
+<h2 class="section-title">เกี่ยวกับเรา</h2>
 <div class="about-container">
-
-<div class="about-image">
-<img src="CONDO.png" class="slide active">
-<img src="CONDO2.png" class="slide">
-<img src="CONDO3.png" class="slide">
+<img src="CONDO.png">
+<div>
+<p>บริษัทบริหารนิติบุคคลครบวงจร</p>
 </div>
-
-<div class="about-text">
-<h2>IRM Extra</h2>
-<p>บริษัทบริหารนิติบุคคลอาคารชุดและหมู่บ้านจัดสรรแบบมืออาชีพ</p>
-<p>เน้นความโปร่งใสและประสิทธิภาพสูงสุด</p>
 </div>
-
-</div>
-</section>
-
-<section class="vision">
-<h2>วิสัยทัศน์</h2>
-<p>เป็นผู้นำด้านการบริหารนิติบุคคลในประเทศไทย</p>
 </section>
 
 <section id="services">
 <h2 class="section-title">บริการ</h2>
-
 <div class="services-grid">
-
-<div class="service-card">
-<h3>คอนโด</h3>
-<p>บริหารอาคารชุด</p>
-</div>
-
-<div class="service-card">
-<h3>หมู่บ้าน</h3>
-<p>บริหารหมู่บ้านจัดสรร</p>
-</div>
-
-<div class="service-card">
-<h3>บัญชี</h3>
-<p>ระบบการเงินครบวงจร</p>
-</div>
-
+<div class="service-card">คอนโด</div>
+<div class="service-card">หมู่บ้าน</div>
+<div class="service-card">บัญชี</div>
 </div>
 </section>
 
 <section id="contact">
 <h2 class="section-title">ติดต่อ</h2>
-
 <div class="contact-box">
-<p>บริษัท IRM Extra</p>
 <p>โทร: 09-8105-6952</p>
 <p>Email: info@irmextra.com</p>
 </div>
-
 </section>
 
-<footer>
-<p>© 2026 IRM Extra</p>
+<footer style="text-align:center;padding:20px;">
+© 2026 IRM Extra
 </footer>
 
 <script>
-let index = 0;
-const slides = document.querySelectorAll(".slide");
-
-setInterval(()=>{
-slides.forEach((img,i)=>{
-img.classList.remove("active");
-if(i===index) img.classList.add("active");
-});
-index = (index+1)%slides.length;
-},1500);
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("active");
+}
 </script>
 
 </body>
