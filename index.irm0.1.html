@@ -23,7 +23,7 @@ scroll-behavior:smooth;
 body{
 background:#0d0d0d;
 color:white;
-overflow-x:hidden;
+overflow-x:hidden; /* FIX กันล้นจอ */
 }
 
 header{
@@ -35,6 +35,7 @@ background:rgba(0,0,0,.85);
 backdrop-filter:blur(10px);
 z-index:999;
 border-bottom:1px solid rgba(255,122,0,.2);
+overflow:hidden; /* FIX กัน header ล้น */
 }
 
 .navbar{
@@ -70,19 +71,21 @@ color:white;
 .nav-menu{
 display:flex;
 gap:30px;
+flex-wrap:nowrap;
 }
 
 .nav-menu a{
 text-decoration:none;
 color:white;
 transition:.3s;
+white-space:nowrap;
 }
 
 .nav-menu a:hover{
 color:#ff7a00;
 }
 
-/* ===== HERO FIX MOBILE ===== */
+/* HERO */
 .hero{
 height:100vh;
 min-height:100vh;
@@ -152,26 +155,6 @@ color:#ff7a00;
 margin-bottom:50px;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.stat-box{
-background:#1a1a1a;
-padding:35px;
-border-radius:20px;
-text-align:center;
-border:1px solid rgba(255,122,0,.2);
-}
-
-.stat-box h3{
-font-size:50px;
-color:#ff7a00;
-}
-
-/* ===== ABOUT SLIDER ===== */
 .about-container{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -184,7 +167,6 @@ width:100%;
 height:500px;
 overflow:hidden;
 border-radius:20px;
-box-shadow:0 0 40px rgba(255,122,0,.2);
 position:relative;
 }
 
@@ -203,39 +185,9 @@ transition:opacity 0.8s ease-in-out;
 opacity:1;
 }
 
-/* ===== END SLIDER ===== */
-
-.about-text h2{
-color:#ff7a00;
-margin-bottom:20px;
-}
-
-.about-text p{
-line-height:2;
-color:#ddd;
-}
-
 .vision{
 background:linear-gradient(135deg,#ff7a00,#ff9900);
 text-align:center;
-}
-
-.vision h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery-item img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:20px;
 }
 
 .services-grid{
@@ -250,11 +202,6 @@ padding:30px;
 border-radius:20px;
 text-align:center;
 border:1px solid rgba(255,122,0,.2);
-}
-
-.service-card h3{
-color:#ff7a00;
-margin-bottom:15px;
 }
 
 .contact-box{
@@ -273,11 +220,15 @@ background:black;
 border-top:2px solid #ff7a00;
 }
 
-/* ===== MOBILE FIX (สำคัญ) ===== */
+/* ===== MOBILE FIX (ตัวจริง) ===== */
 @media(max-width:768px){
 
+body{
+overflow-x:hidden;
+}
+
 .nav-menu{
-display:none;
+display:none; /* ซ่อนเมนูมือถือ */
 }
 
 .logo img{
@@ -288,9 +239,9 @@ height:60px;
 font-size:24px;
 }
 
-/* HERO ให้เต็มจอมือถือจริง */
+/* HERO */
 .hero{
-height:100vh;
+height:100svh;
 min-height:100svh;
 padding:15px;
 }
@@ -312,7 +263,7 @@ font-size:20px;
 font-size:14px;
 }
 
-/* section ไม่ให้ขอบหดเกิน */
+/* section */
 section{
 padding:60px 20px;
 }
@@ -321,7 +272,7 @@ padding:60px 20px;
 font-size:28px;
 }
 
-/* about ให้ไม่ล้นจอ */
+/* about */
 .about-container{
 grid-template-columns:1fr;
 }
@@ -342,11 +293,9 @@ height:250px;
 <body>
 
 <header>
-
 <div class="navbar">
 
 <div class="logo-area">
-
 <div class="logo">
 <img src="IRM2.png" alt="IRM Logo">
 </div>
@@ -354,7 +303,6 @@ height:250px;
 <div class="company-name">
 IRM<span>Extra</span>
 </div>
-
 </div>
 
 <div class="nav-menu">
@@ -365,11 +313,9 @@ IRM<span>Extra</span>
 </div>
 
 </div>
-
 </header>
 
 <section class="hero">
-
 <div class="hero-content">
 
 <h1>IRM EXTRA</h1>
@@ -384,12 +330,9 @@ IRM<span>Extra</span>
 และนิติบุคคลหมู่บ้านจัดสรรอย่างมืออาชีพ
 </p>
 
-<a href="#about" class="btn">
-เกี่ยวกับบริษัท
-</a>
+<a href="#about" class="btn">เกี่ยวกับบริษัท</a>
 
 </div>
-
 </section>
 
 <section id="about">
@@ -399,42 +342,26 @@ IRM<span>Extra</span>
 <div class="about-container">
 
 <div class="about-image">
-
 <img src="CONDO.png" class="slide active">
 <img src="CONDO2.png" class="slide">
 <img src="CONDO3.png" class="slide">
-
 </div>
 
 <div class="about-text">
+<h2>IRM Extra</h2>
 
-<h2>IRM Extra </h2>
+<p>บริษัท IRM Extra ให้บริการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรรอย่างครบวงจรด้วยทีมงานมืออาชีพ</p>
 
-<p>
-    บริษัท IRM Extra ให้บริการบริหารจัดการนิติบุคคลอาคารชุด
-และนิติบุคคลหมู่บ้านจัดสรรอย่างครบวงจรด้วยทีมงานมืออาชีพ
-</p>
-
-<p>
-    เรามุ่งเน้นการบริหารงานอย่างโปร่งใส มีประสิทธิภาพ
-และสร้างความพึงพอใจสูงสุดให้แก่ลูกค้า
-</p>
+<p>เรามุ่งเน้นการบริหารงานอย่างโปร่งใส มีประสิทธิภาพ และสร้างความพึงพอใจสูงสุดให้แก่ลูกค้า</p>
 
 </div>
 
 </div>
-
 </section>
 
 <section class="vision">
-
 <h2>วิสัยทัศน์</h2>
-
-<p>
-เป็นผู้นำด้านการบริหารจัดการนิติบุคคลอาคารชุด
-และนิติบุคคลหมู่บ้านจัดสรรที่ได้รับความไว้วางใจสูงสุดในประเทศไทย
-</p>
-
+<p>เป็นผู้นำด้านการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรรที่ได้รับความไว้วางใจสูงสุดในประเทศไทย</p>
 </section>
 
 <section id="services">
@@ -460,57 +387,29 @@ IRM<span>Extra</span>
 
 </div>
 
+</section>
+
 <section id="contact">
 
 <h2 class="section-title">ติดต่อเรา</h2>
 
 <div class="contact-box" style="text-align:left;">
 
-<h3 style="color:#ff7a00;margin-bottom:20px;text-align:center;">
-IRM EXTRA 
-</h3>
+<h3 style="color:#ff7a00;margin-bottom:20px;text-align:center;">IRM EXTRA</h3>
 
-<p style="margin-bottom:10px;">
-บริษัท บริษัท ไอ อาร์ เอ็ม เอ็กซ์ตร้า จำกัด 
-</p>
-
-<p style="margin-bottom:10px;">
-ที่อยู่ : 1694 ถนนมิตภาพ ตำบลในเมือง อำเมืองนครราชสีมา จังหวัดนครราชสีมา 30000
-</p>
-
-<p style="margin-bottom:10px;">
-โทร: 09-8105-6952,09-8750-5695
-</p>
-
-<p style="margin-bottom:10px;">
-Email: info@irmextra.com
-</p>
-
-<p style="margin-bottom:20px;">
-Website: www.irmextra.com
-</p>
-
-<hr style="border:1px solid #333;margin:20px 0;">
-
-<h3 style="color:#ff7a00;margin-bottom:15px;">
-</h3>
+<p>บริษัท บริษัท ไอ อาร์ เอ็ม เอ็กซ์ตร้า จำกัด</p>
+<p>ที่อยู่ : 1694 ถนนมิตภาพ ตำบลในเมือง อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา 30000</p>
+<p>โทร: 09-8105-6952, 09-8750-5695</p>
+<p>Email: info@irmextra.com</p>
+<p>Website: www.irmextra.com</p>
 
 </div>
 
 </section>
 
-</section>
-
 <footer>
-
-<h3 style="color:#ff7a00;">
-<br>บริษัท ไอ อาร์ เอ็ม เอ็กซ์ตร้า จำกัด<br>IRM EXTRA 
-</h3>
-
-<br>
-
+<h3 style="color:#ff7a00;">บริษัท ไอ อาร์ เอ็ม เอ็กซ์ตร้า จำกัด<br>IRM EXTRA</h3>
 <p>© 2026 IRM Extra</p>
-
 </footer>
 
 <script>
@@ -520,9 +419,7 @@ const slides = document.querySelectorAll(".slide");
 function showSlide() {
     slides.forEach((img, i) => {
         img.classList.remove("active");
-        if (i === index) {
-            img.classList.add("active");
-        }
+        if (i === index) img.classList.add("active");
     });
 
     index++;
