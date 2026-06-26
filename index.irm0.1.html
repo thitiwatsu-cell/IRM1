@@ -48,109 +48,93 @@ align-items:center;
 gap:10px;
 }
 
-.logo-area{
-display:flex;
-align-items:center;
-}
-
 .company-name{
 font-size:26px;
 font-weight:700;
 color:#ff7a00;
-white-space:nowrap;
 }
 
-/* ===== MENU FIX ===== */
+/* ===== MENU ===== */
 .nav-menu{
 display:flex;
-flex-wrap:nowrap;
 gap:10px;
-justify-content:flex-end;
-max-width:70%;
 overflow-x:auto;
 white-space:nowrap;
+max-width:70%;
 }
 
 .nav-menu a{
 text-decoration:none;
 color:white;
 font-size:13px;
-white-space:nowrap;
 padding:6px 10px;
 border-radius:20px;
 transition:.3s;
-flex-shrink:0;
 }
 
 .nav-menu a:hover{
 background:#ff7a00;
-color:white;
 }
 
 /* ===== HERO ===== */
 .hero{
 height:100vh;
-min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 background:
-linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),
+linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.6)),
 url("CONDO.png");
-
 background-size:cover;
 background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
 padding:20px;
 }
 
 .hero-content{
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(4px);
-padding:60px;
-border-radius:30px;
-max-width:950px;
-width:100%;
+background:rgba(0,0,0,.4);
+padding:50px;
+border-radius:25px;
 }
 
-.hero h1{font-size:90px;color:#ff8c1a;}
-.hero h2{font-size:36px;margin:15px 0;}
-.hero p{font-size:20px;}
+.hero h1{font-size:80px;color:#ff7a00;}
+.hero h2{font-size:30px;}
+.hero p{font-size:18px;}
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 40px;
+margin-top:20px;
+padding:12px 30px;
 background:#ff7a00;
 color:white;
-text-decoration:none;
 border-radius:50px;
+text-decoration:none;
 }
 
 /* ===== SECTION ===== */
-section{padding:100px 10%;}
+section{
+padding:90px 10%;
+}
 
 .section-title{
 text-align:center;
-font-size:42px;
+font-size:40px;
 color:#ff7a00;
-margin-bottom:50px;
-width:100%;
+margin-bottom:40px;
 }
 
 /* ===== ABOUT ===== */
 .about-container{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
+gap:40px;
 }
 
 .about-image{
-height:500px;
+height:450px;
 position:relative;
-overflow:hidden;
 border-radius:20px;
+overflow:hidden;
 }
 
 .about-image img{
@@ -162,38 +146,47 @@ opacity:0;
 transition:.8s;
 }
 
-.about-image img.active{opacity:1;}
+.about-image img.active{
+opacity:1;
+}
 
 /* ===== SERVICES ===== */
 .services-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-gap:25px;
-justify-content:center;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .service-card{
 background:#1a1a1a;
-padding:30px;
+padding:25px;
 border-radius:20px;
 text-align:center;
-border:1px solid rgba(255,122,0,.2);
+}
+
+/* ===== TEAM ===== */
+#team .service-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
 }
 
 /* ===== CONTACT ===== */
 .contact-box{
-max-width:800px;
-margin:auto;
 background:#1a1a1a;
 padding:40px;
 border-radius:20px;
 text-align:center;
+max-width:800px;
+margin:auto;
 }
 
 /* ===== FOOTER ===== */
 footer{
 text-align:center;
-padding:30px;
+padding:25px;
 background:black;
 border-top:2px solid #ff7a00;
 }
@@ -201,46 +194,16 @@ border-top:2px solid #ff7a00;
 /* ===== MOBILE ===== */
 @media(max-width:768px){
 
-.nav-menu{
-flex-wrap:nowrap;
-max-width:100%;
-justify-content:flex-start;
-overflow-x:auto;
-}
-
-.nav-menu a{
-font-size:12px;
-padding:5px 8px;
-}
-
-.company-name{font-size:20px;}
-
-.hero h1{font-size:42px;}
+.hero h1{font-size:40px;}
 .hero h2{font-size:20px;}
-.hero p{font-size:14px;}
-
-.hero-content{
-padding:25px;
-border-radius:20px;
-}
 
 .about-container{
 grid-template-columns:1fr;
 }
 
-section{padding:60px 20px;}
-
-.services-grid{
-grid-template-columns:1fr;
-justify-items:center;
+section{
+padding:60px 20px;
 }
-
-.service-card{
-width:100%;
-max-width:350px;
-}
-
-.contact-box{width:100%;}
 }
 
 </style>
@@ -250,131 +213,111 @@ max-width:350px;
 
 <header>
 <div class="navbar">
-
-<div class="logo-area">
 <div class="company-name">IRM<span style="color:white;">Extra</span></div>
-</div>
 
 <div class="nav-menu">
-<a href="#about">เกี่ยวกับเรา</a>
+<a href="#about">เกี่ยวกับ</a>
 <a href="#services">บริการ</a>
-<a href="#contact">ติดต่อเรา</a>
-<a href="career.html">สมัครงาน</a>
+<a href="#team">ผู้บริหาร</a>
+<a href="#contact">ติดต่อ</a>
 </div>
-
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1>IRM EXTRA</h1>
-<h2>เราดูแลทุกวัน<br>เพื่อให้โครงการน่าอยู่ในทุกช่วงเวลา</h2>
-<p>ผู้เชี่ยวชาญด้านการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรร</p>
-<a href="#about" class="btn">เกี่ยวกับบริษัท</a>
+<h2>บริหารจัดการนิติบุคคลมืออาชีพ</h2>
+<p>ดูแลโครงการอย่างโปร่งใสและมีประสิทธิภาพ</p>
+<a href="#about" class="btn">เริ่มต้น</a>
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <h2 class="section-title">เกี่ยวกับบริษัท</h2>
 
 <div class="about-container">
 
 <div class="about-image">
-<img src="CONDO.png" class="slide active">
-<img src="CONDO2.png" class="slide">
-<img src="CONDO3.png" class="slide">
+<img src="CONDO.png" class="active">
+<img src="CONDO2.png">
+<img src="CONDO3.png">
 </div>
 
-<div class="about-text">
-<h2>IRM Extra</h2>
-<p>บริษัท IRM Extra ให้บริการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรร</p>
-<p>เรามุ่งเน้นความโปร่งใสและประสิทธิภาพสูงสุด</p>
+<div>
+<h3>IRM Extra</h3>
+<p>บริษัทบริหารจัดการนิติบุคคลอาคารชุดและหมู่บ้านจัดสรร</p>
 </div>
 
 </div>
 </section>
 
-<section class="vision">
-<h2 class="section-title">วิสัยทัศน์</h2>
-<p style="text-align:center;max-width:900px;margin:auto;">
-เป็นผู้นำด้านการบริหารจัดการนิติบุคคลในประเทศไทย
-</p>
-</section>
-
+<!-- SERVICES -->
 <section id="services">
-<h2 class="section-title">บริการของเรา</h2>
+<h2 class="section-title">บริการ</h2>
 
 <div class="services-grid">
 
 <div class="service-card">
-<h3>คอนโดมิเนียม</h3>
+<h3>คอนโด</h3>
 <p>บริหารครบวงจร</p>
 </div>
 
 <div class="service-card">
-<h3>หมู่บ้านจัดสรร</h3>
+<h3>หมู่บ้าน</h3>
 <p>ดูแลระบบนิติบุคคล</p>
 </div>
 
 <div class="service-card">
-<h3>การเงินและบัญชี</h3>
-<p>รายงานครบถ้วน</p>
+<h3>บัญชี</h3>
+<p>การเงินโปร่งใส</p>
 </div>
 
 </div>
 </section>
 
-<!-- ===== NEW FULL CONTENT ===== -->
-<section id="company-detail">
+<!-- ===== TEAM MANAGEMENT (FROM PDF) ===== -->
+<section id="team">
 
-<h2 class="section-title">ข้อมูลบริษัท</h2>
+<h2 class="section-title">ทีมผู้บริหาร</h2>
 
-<div style="max-width:1000px;margin:auto;line-height:1.8;">
+<div class="services-grid">
 
-<h3 style="color:#ff7a00;">วิสัยทัศน์</h3>
-<p>เป็นบริษัทให้บริการด้านบริหารทรัพย์สินโดยทีมงานมืออาชีพที่ได้รับการยอมรับสูงสุดในประเทศไทย</p>
+<div class="service-card">
+<img src="ceo.jpg">
+<h3>CEO</h3>
+<p>ธนบดี หวานฉ่ำ</p>
+<p>กรรมการผู้จัดการ</p>
+</div>
 
-<h3 style="color:#ff7a00;margin-top:20px;">พันธกิจ</h3>
-<ol>
-<li>พัฒนาศักยภาพด้านบุคลากรให้สามารถให้บริการได้ตามมาตรฐานสากล</li>
-<li>นำเทคโนโลยีและนวัตกรรมต่างๆ มาปรับใช้ เพื่อรองรับการเปลี่ยนแปลง</li>
-<li>พัฒนาการให้บริการ โดยเน้นให้ลูกค้ามีส่วนร่วมในการให้บริการ</li>
-<li>ปลูกฝังคุณธรรม ความซื่อสัตย์และจริยธรรมในวิชาชีพ</li>
-</ol>
+<div class="service-card">
+<img src="ops.jpg">
+<h3>Operations Manager</h3>
+<p>ฐาปนันท์ เกษมสมบูรณ์</p>
+<p>ผู้จัดการฝ่ายปฏิบัติการ</p>
+</div>
 
-<h3 style="color:#ff7a00;margin-top:20px;">ค่านิยม PEPSI “A”</h3>
-<ul>
-<li>Positive Attitude</li>
-<li>Ethics and Integrity</li>
-<li>Professionalism and Customer Centric</li>
-<li>Speed and Quality</li>
-<li>Innovativeness</li>
-<li>Accept Change</li>
-</ul>
+<div class="service-card">
+<img src="eng.jpg">
+<h3>Engineering Manager</h3>
+<p>พงศ์เทพ เสียงพา</p>
+<p>ผู้จัดการฝ่ายวิศวกรรม</p>
+</div>
 
-<h3 style="color:#ff7a00;margin-top:20px;">ขอบเขตการให้บริการ</h3>
-
-<p><b>1. After-sales consultation</b></p>
-<p>- วางระบบงาน / งบประมาณ / บัญชี / ประชุม / กฎระเบียบ</p>
-
-<p><b>2. Registration Housing Estate</b></p>
-<p>- เอกสาร / งบประมาณ / ประชุม / ยื่นจดทะเบียน</p>
-
-<p><b>3. Condominium Registration</b></p>
-<p>- เอกสาร / กรรมสิทธิ์ / จดทะเบียนนิติบุคคล</p>
-
-<p><b>4. Administration</b></p>
-<p>- บริหารโครงการ / ผู้จัดการ / อาคาร / หอพัก</p>
-
-<p><b>5. Meetings</b></p>
-<p>- ประชุม / เอกสาร / รายงาน / ยื่นหน่วยงาน</p>
-
-<p><b>6. Utility Inspection</b></p>
-<p>- ไฟฟ้า / ประปา / ถนน / ระบายน้ำ / ความปลอดภัย</p>
+<div class="service-card">
+<img src="assistant.jpg">
+<h3>Assistant Operations Manager</h3>
+<p>ธนกรชัย ปิยะบริษฐกุล</p>
+<p>ผู้ช่วยผู้จัดการ</p>
+</div>
 
 </div>
+
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2 class="section-title">ติดต่อเรา</h2>
 
@@ -383,6 +326,7 @@ max-width:350px;
 <p>โทร: 09-8105-6952</p>
 <p>Email: info@irmextra.com</p>
 </div>
+
 </section>
 
 <footer>
@@ -390,13 +334,13 @@ max-width:350px;
 </footer>
 
 <script>
-let index = 0;
-const slides = document.querySelectorAll(".slide");
+let i=0;
+const slides=document.querySelectorAll(".about-image img");
 
-setInterval(() => {
-slides.forEach((img,i)=>img.classList.remove("active"));
-slides[index].classList.add("active");
-index = (index+1)%slides.length;
+setInterval(()=>{
+slides.forEach(s=>s.classList.remove("active"));
+slides[i].classList.add("active");
+i=(i+1)%slides.length;
 },1500);
 </script>
 
