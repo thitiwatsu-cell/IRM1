@@ -17,6 +17,11 @@ box-sizing:border-box;
 font-family:'Kanit',sans-serif;
 }
 
+img{
+max-width:100%;
+display:block;
+}
+
 html{scroll-behavior:smooth;}
 
 body{
@@ -121,7 +126,7 @@ color:#ff7a00;
 margin-bottom:50px;
 }
 
-/* ===== ABOUT ===== */
+/* ===== ABOUT IMAGE FIX ===== */
 .about-container{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -134,18 +139,23 @@ height:500px;
 position:relative;
 overflow:hidden;
 border-radius:20px;
+display:block;
 }
 
 .about-image img{
 position:absolute;
+inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
+object-position:center;
 opacity:0;
 transition:.8s;
 }
 
-.about-image img.active{opacity:1;}
+.about-image img.active{
+opacity:1;
+}
 
 /* ===== SERVICES ===== */
 .services-grid{
@@ -162,7 +172,7 @@ text-align:center;
 border:1px solid rgba(255,122,0,.2);
 }
 
-/* ===== TEAM ===== */
+/* ===== TEAM FIX ===== */
 .team-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
@@ -183,6 +193,7 @@ height:220px;
 object-fit:cover;
 border-radius:15px;
 margin-bottom:15px;
+display:block;
 }
 
 /* ===== CONTACT ===== */
@@ -276,13 +287,12 @@ section{padding:60px 20px;}
 <h2 class="section-title">พันธกิจ</h2>
 
 <div class="services-grid">
-
 <div class="service-card">พัฒนาศักยภาพบุคลากรให้ได้มาตรฐานสากล</div>
 <div class="service-card">นำเทคโนโลยีและนวัตกรรมมาใช้</div>
 <div class="service-card">ให้ลูกค้ามีส่วนร่วมในการบริการ</div>
 <div class="service-card">ปลูกฝังคุณธรรมและจริยธรรม</div>
-
 </div>
+
 </section>
 
 <!-- VALUES -->
@@ -304,15 +314,14 @@ section{padding:60px 20px;}
 <h2 class="section-title">บริการของเรา</h2>
 
 <div class="services-grid">
-
 <div class="service-card">After-sales Consultation</div>
 <div class="service-card">Registration Housing Estate</div>
 <div class="service-card">Condominium Registration</div>
 <div class="service-card">Property Administration</div>
 <div class="service-card">General Meetings</div>
 <div class="service-card">Utility Inspection</div>
-
 </div>
+
 </section>
 
 <!-- TEAM -->
@@ -346,6 +355,7 @@ section{padding:60px 20px;}
 </div>
 
 </div>
+
 </section>
 
 <!-- CONTACT -->
