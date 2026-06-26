@@ -20,14 +20,12 @@ font-family:'Kanit',sans-serif;
 html,body{
 overflow-x:hidden;
 scroll-behavior:smooth;
-height:auto;
 }
 
-/* 🔥 FIX หลัก */
 body{
 background:#0d0d0d;
 color:white;
-padding-top:70px; /* กัน header fixed ทับ */
+padding-top:70px;
 }
 
 /* ===== HEADER ===== */
@@ -42,19 +40,18 @@ z-index:999;
 border-bottom:1px solid rgba(255,122,0,.2);
 }
 
-/* ===== NAV ===== */
 .navbar{
 width:100%;
 padding:10px 15px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:10px;
 flex-wrap:wrap;
+gap:10px;
 }
 
 .company-name{
-font-size:22px;
+font-size:24px;
 font-weight:700;
 color:#ff7a00;
 white-space:nowrap;
@@ -90,16 +87,14 @@ background-size:cover;
 background-position:center;
 }
 
-/* ===== HERO CONTENT ===== */
 .hero-content{
 background:rgba(0,0,0,.5);
-padding:25px;
+padding:30px;
 border-radius:20px;
 max-width:900px;
 width:100%;
 }
 
-/* ===== TEXT SAFE ===== */
 .hero h1{
 font-size:clamp(30px,8vw,80px);
 color:#ff8c1a;
@@ -107,10 +102,21 @@ color:#ff8c1a;
 
 .hero h2{
 font-size:clamp(18px,4vw,32px);
+margin:10px 0;
 }
 
 .hero p{
 font-size:clamp(13px,3vw,18px);
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#ff7a00;
+color:white;
+text-decoration:none;
+border-radius:30px;
 }
 
 /* ===== SECTION ===== */
@@ -118,16 +124,104 @@ section{
 padding:80px 15px;
 }
 
+.section-title{
+text-align:center;
+font-size:34px;
+color:#ff7a00;
+margin-bottom:30px;
+}
+
+/* ===== ABOUT ===== */
+.about-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+align-items:center;
+}
+
+.about-image{
+height:320px;
+position:relative;
+overflow:hidden;
+border-radius:15px;
+}
+
+.about-image img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:.8s;
+}
+
+.about-image img.active{
+opacity:1;
+}
+
+/* ===== GRID ===== */
+.services-grid,
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+gap:20px;
+}
+
+/* ===== CARD ===== */
+.service-card,
+.team-card{
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+text-align:center;
+border:1px solid rgba(255,122,0,.2);
+}
+
+.team-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+/* ===== CONTACT ===== */
+.contact-box{
+max-width:800px;
+margin:auto;
+background:#1a1a1a;
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:25px;
+background:black;
+border-top:2px solid #ff7a00;
+}
+
 /* ===== MOBILE ===== */
 @media(max-width:768px){
+
+body{
+padding-top:100px;
+}
 
 .navbar{
 flex-direction:column;
 align-items:flex-start;
 }
 
-body{
-padding-top:100px;
+.about-container{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:24px;
 }
 
 }
@@ -152,13 +246,145 @@ padding-top:100px;
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1>IRM EXTRA</h1>
 <h2>เราดูแลทุกวัน<br>เพื่อให้โครงการน่าอยู่</h2>
 <p>ผู้เชี่ยวชาญด้านการบริหารนิติบุคคลอาคารชุด และหมู่บ้านจัดสรร</p>
+<a href="#about" class="btn">ดูรายละเอียด</a>
 </div>
 </section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">เกี่ยวกับบริษัท</h2>
+
+<div class="about-container">
+
+<div class="about-image">
+<img src="CONDO.png" class="active">
+<img src="CONDO2.png">
+<img src="CONDO3.png">
+</div>
+
+<div>
+<h3>IRM Extra Property Management</h3>
+<p>บริษัทบริหารนิติบุคคลอาคารชุดและหมู่บ้านจัดสรรแบบครบวงจร</p>
+</div>
+
+</div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+<h2 class="section-title">วิสัยทัศน์</h2>
+<p style="text-align:center;">
+เป็นบริษัทให้บริการด้านบริหารทรัพย์สินโดยทีมงานมืออาชีพที่ได้รับการยอมรับสูงสุดในประเทศไทย
+</p>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+<h2 class="section-title">พันธกิจ</h2>
+
+<div class="services-grid">
+<div class="service-card">พัฒนาศักยภาพบุคลากรให้ได้มาตรฐานสากล</div>
+<div class="service-card">นำเทคโนโลยีและนวัตกรรมมาใช้</div>
+<div class="service-card">ให้ลูกค้ามีส่วนร่วมในการบริการ</div>
+<div class="service-card">ปลูกฝังคุณธรรมและจริยธรรม</div>
+</div>
+
+</section>
+
+<!-- VALUES -->
+<section>
+<h2 class="section-title">ค่านิยม (PEPSI “A”)</h2>
+
+<div class="services-grid">
+<div class="service-card">Positive Attitude</div>
+<div class="service-card">Ethics & Integrity</div>
+<div class="service-card">Professionalism</div>
+<div class="service-card">Speed & Quality</div>
+<div class="service-card">Innovativeness</div>
+<div class="service-card">Accept Change</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2 class="section-title">บริการของเรา</h2>
+
+<div class="services-grid">
+<div class="service-card">After-sales Consultation</div>
+<div class="service-card">Registration Housing Estate</div>
+<div class="service-card">Condominium Registration</div>
+<div class="service-card">Property Administration</div>
+<div class="service-card">General Meetings</div>
+<div class="service-card">Utility Inspection</div>
+</div>
+
+</section>
+
+<!-- TEAM -->
+<section id="team">
+<h2 class="section-title">ทีมผู้บริหาร</h2>
+
+<div class="team-grid">
+
+<div class="team-card">
+<img src="ceo.jpg">
+<h3>ธนบดี หวานฉ่ำ</h3>
+<p>CEO / กรรมการผู้จัดการ</p>
+</div>
+
+<div class="team-card">
+<img src="ops.jpg">
+<h3>ฐาปนันท์ เกษมสมบูรณ์</h3>
+<p>Operations Manager</p>
+</div>
+
+<div class="team-card">
+<img src="eng.jpg">
+<h3>พงศ์เทพ เสียงพา</h3>
+<p>Engineering Manager</p>
+</div>
+
+<div class="team-card">
+<img src="PTT.jpg">
+<h3>ธนกรชัย ปิยะบริษฐกุล</h3>
+<p>Assistant Operations Manager</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2 class="section-title">ติดต่อเรา</h2>
+
+<div class="contact-box">
+<p>IRM Extra Property Management</p>
+<p>โทร: 09-8105-6952</p>
+<p>Email: info@irmextra.com</p>
+</div>
+</section>
+
+<footer>
+IRM EXTRA © 2026
+</footer>
+
+<script>
+let index=0;
+const slides=document.querySelectorAll(".about-image img");
+
+setInterval(()=>{
+slides.forEach(s=>s.classList.remove("active"));
+slides[index].classList.add("active");
+index=(index+1)%slides.length;
+},1500);
+</script>
 
 </body>
 </html>
