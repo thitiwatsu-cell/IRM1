@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -163,7 +164,7 @@ transition:.8s;
 
 .about-image img.active{opacity:1;}
 
-/* ===== SERVICES FIX ===== */
+/* ===== SERVICES ===== */
 .services-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
@@ -179,7 +180,7 @@ text-align:center;
 border:1px solid rgba(255,122,0,.2);
 }
 
-/* ===== CONTACT FIX ===== */
+/* ===== CONTACT ===== */
 .contact-box{
 max-width:800px;
 margin:auto;
@@ -197,7 +198,7 @@ background:black;
 border-top:2px solid #ff7a00;
 }
 
-/* ===== MOBILE FIX ===== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
 .nav-menu{
@@ -212,9 +213,7 @@ font-size:12px;
 padding:5px 8px;
 }
 
-.company-name{
-font-size:20px;
-}
+.company-name{font-size:20px;}
 
 .hero h1{font-size:42px;}
 .hero h2{font-size:20px;}
@@ -229,11 +228,8 @@ border-radius:20px;
 grid-template-columns:1fr;
 }
 
-section{
-padding:60px 20px;
-}
+section{padding:60px 20px;}
 
-/* SERVICES MOBILE */
 .services-grid{
 grid-template-columns:1fr;
 justify-items:center;
@@ -244,11 +240,7 @@ width:100%;
 max-width:350px;
 }
 
-/* CONTACT MOBILE */
-.contact-box{
-width:100%;
-}
-
+.contact-box{width:100%;}
 }
 
 </style>
@@ -274,19 +266,12 @@ width:100%;
 </header>
 
 <section class="hero">
-
 <div class="hero-content">
-
 <h1>IRM EXTRA</h1>
-
 <h2>เราดูแลทุกวัน<br>เพื่อให้โครงการน่าอยู่ในทุกช่วงเวลา</h2>
-
 <p>ผู้เชี่ยวชาญด้านการบริหารจัดการนิติบุคคลอาคารชุด และนิติบุคคลหมู่บ้านจัดสรร</p>
-
 <a href="#about" class="btn">เกี่ยวกับบริษัท</a>
-
 </div>
-
 </section>
 
 <section id="about">
@@ -310,12 +295,13 @@ width:100%;
 </section>
 
 <section class="vision">
-<h2>วิสัยทัศน์</h2>
-<p>เป็นผู้นำด้านการบริหารจัดการนิติบุคคลในประเทศไทย</p>
+<h2 class="section-title">วิสัยทัศน์</h2>
+<p style="text-align:center;max-width:900px;margin:auto;">
+เป็นผู้นำด้านการบริหารจัดการนิติบุคคลในประเทศไทย
+</p>
 </section>
 
 <section id="services">
-
 <h2 class="section-title">บริการของเรา</h2>
 
 <div class="services-grid">
@@ -336,18 +322,66 @@ width:100%;
 </div>
 
 </div>
+</section>
 
+<!-- ===== NEW FULL CONTENT ===== -->
+<section id="company-detail">
+
+<h2 class="section-title">ข้อมูลบริษัท</h2>
+
+<div style="max-width:1000px;margin:auto;line-height:1.8;">
+
+<h3 style="color:#ff7a00;">วิสัยทัศน์</h3>
+<p>เป็นบริษัทให้บริการด้านบริหารทรัพย์สินโดยทีมงานมืออาชีพที่ได้รับการยอมรับสูงสุดในประเทศไทย</p>
+
+<h3 style="color:#ff7a00;margin-top:20px;">พันธกิจ</h3>
+<ol>
+<li>พัฒนาศักยภาพด้านบุคลากรให้สามารถให้บริการได้ตามมาตรฐานสากล</li>
+<li>นำเทคโนโลยีและนวัตกรรมต่างๆ มาปรับใช้ เพื่อรองรับการเปลี่ยนแปลง</li>
+<li>พัฒนาการให้บริการ โดยเน้นให้ลูกค้ามีส่วนร่วมในการให้บริการ</li>
+<li>ปลูกฝังคุณธรรม ความซื่อสัตย์และจริยธรรมในวิชาชีพ</li>
+</ol>
+
+<h3 style="color:#ff7a00;margin-top:20px;">ค่านิยม PEPSI “A”</h3>
+<ul>
+<li>Positive Attitude</li>
+<li>Ethics and Integrity</li>
+<li>Professionalism and Customer Centric</li>
+<li>Speed and Quality</li>
+<li>Innovativeness</li>
+<li>Accept Change</li>
+</ul>
+
+<h3 style="color:#ff7a00;margin-top:20px;">ขอบเขตการให้บริการ</h3>
+
+<p><b>1. After-sales consultation</b></p>
+<p>- วางระบบงาน / งบประมาณ / บัญชี / ประชุม / กฎระเบียบ</p>
+
+<p><b>2. Registration Housing Estate</b></p>
+<p>- เอกสาร / งบประมาณ / ประชุม / ยื่นจดทะเบียน</p>
+
+<p><b>3. Condominium Registration</b></p>
+<p>- เอกสาร / กรรมสิทธิ์ / จดทะเบียนนิติบุคคล</p>
+
+<p><b>4. Administration</b></p>
+<p>- บริหารโครงการ / ผู้จัดการ / อาคาร / หอพัก</p>
+
+<p><b>5. Meetings</b></p>
+<p>- ประชุม / เอกสาร / รายงาน / ยื่นหน่วยงาน</p>
+
+<p><b>6. Utility Inspection</b></p>
+<p>- ไฟฟ้า / ประปา / ถนน / ระบายน้ำ / ความปลอดภัย</p>
+
+</div>
 </section>
 
 <section id="contact">
 <h2 class="section-title">ติดต่อเรา</h2>
 
 <div class="contact-box">
-
-<p>IRM Extra </p>
+<p>IRM Extra</p>
 <p>โทร: 09-8105-6952</p>
 <p>Email: info@irmextra.com</p>
-
 </div>
 </section>
 
