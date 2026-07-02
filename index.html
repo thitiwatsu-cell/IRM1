@@ -178,15 +178,24 @@ text-align:center;
 border:1px solid rgba(255,122,0,.2);
 }
 
-/* ===== FIX TEAM IMAGE (แก้ตรงนี้) ===== */
-.team-card img{
+/* ===== FIX IMAGE FRAME ===== */
+.team-card{
+overflow:hidden;
+}
+
+.img-box{
 width:100%;
-max-width:100%;
-height:200px;
+height:180px;
+overflow:hidden;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+.img-box img{
+width:100%;
+height:100%;
 object-fit:cover;
 display:block;
-margin:0 auto 10px auto;
-border-radius:12px;
 }
 
 /* ===== CONTACT ===== */
@@ -249,7 +258,6 @@ font-size:24px;
 </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1>IRM EXTRA</h1>
@@ -259,12 +267,10 @@ font-size:24px;
 </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
 <h2 class="section-title">เกี่ยวกับบริษัท</h2>
 
 <div class="about-container">
-
 <div class="about-image">
 <img src="CONDO.png" class="active">
 <img src="CONDO2.png">
@@ -275,11 +281,9 @@ font-size:24px;
 <h3>IRM Extra Property Management</h3>
 <p>บริษัทบริหารนิติบุคคลอาคารชุดและหมู่บ้านจัดสรรแบบครบวงจร</p>
 </div>
-
 </div>
 </section>
 
-<!-- VISION -->
 <section id="vision">
 <h2 class="section-title">วิสัยทัศน์</h2>
 <p style="text-align:center;">
@@ -287,86 +291,68 @@ font-size:24px;
 </p>
 </section>
 
-<!-- MISSION -->
 <section id="mission">
 <h2 class="section-title">พันธกิจ</h2>
-
 <div class="services-grid">
-<div class="service-card">พัฒนาศักยภาพบุคลากรให้ได้มาตรฐานสากล</div>
-<div class="service-card">นำเทคโนโลยีและนวัตกรรมมาใช้</div>
-<div class="service-card">ให้ลูกค้ามีส่วนร่วมในการบริการ</div>
-<div class="service-card">ปลูกฝังคุณธรรมและจริยธรรม</div>
-</div>
-
-</section>
-
-<!-- VALUES -->
-<section>
-<h2 class="section-title">ค่านิยม (PEPSI “A”)</h2>
-
-<div class="services-grid">
-<div class="service-card">Positive Attitude</div>
-<div class="service-card">Ethics & Integrity</div>
-<div class="service-card">Professionalism</div>
-<div class="service-card">Speed & Quality</div>
-<div class="service-card">Innovativeness</div>
-<div class="service-card">Accept Change</div>
+<div class="service-card">พัฒนาศักยภาพบุคลากร</div>
+<div class="service-card">นำเทคโนโลยีมาใช้</div>
+<div class="service-card">ให้ลูกค้ามีส่วนร่วม</div>
+<div class="service-card">ปลูกฝังคุณธรรม</div>
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <h2 class="section-title">บริการของเรา</h2>
-
 <div class="services-grid">
-<div class="service-card">After-sales Consultation</div>
-<div class="service-card">Registration Housing Estate</div>
-<div class="service-card">Condominium Registration</div>
 <div class="service-card">Property Administration</div>
 <div class="service-card">General Meetings</div>
-<div class="service-card">Utility Inspection</div>
+<div class="service-card">Registration Service</div>
+<div class="service-card">Consultation</div>
 </div>
-
 </section>
 
-<!-- TEAM -->
 <section id="team">
 <h2 class="section-title">ทีมผู้บริหาร</h2>
 
 <div class="team-grid">
 
 <div class="team-card">
+<div class="img-box">
 <img src="ceo.jpg">
+</div>
 <h3>ธนบดี หวานฉ่ำ</h3>
 <p>CEO / กรรมการผู้จัดการ</p>
 </div>
 
 <div class="team-card">
+<div class="img-box">
 <img src="ops.jpg">
+</div>
 <h3>ฐาปนันท์ เกษมสมบูรณ์</h3>
 <p>Operations Manager</p>
 </div>
 
 <div class="team-card">
+<div class="img-box">
 <img src="eng.jpg">
+</div>
 <h3>พงศ์เทพ เสียงพา</h3>
 <p>Engineering Manager</p>
 </div>
 
 <div class="team-card">
+<div class="img-box">
 <img src="PTT.jpg">
+</div>
 <h3>ธนกรชัย ปิยะบริษฐกุล</h3>
 <p>Assistant Operations Manager</p>
 </div>
 
 </div>
-
 </section>
 
-<!-- CONTACT -->
 <section>
 <h2 class="section-title">ติดต่อเรา</h2>
-
 <div class="contact-box">
 <p>IRM Extra Property Management</p>
 <p>โทร: 09-8105-6952</p>
