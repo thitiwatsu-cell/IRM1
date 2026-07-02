@@ -160,7 +160,7 @@ transition:.8s;
 opacity:1;
 }
 
-/* ===== GRID ===== */
+/* ===== SERVICES / GRID ===== */
 .services-grid,
 .team-grid{
 display:grid;
@@ -178,19 +178,26 @@ text-align:center;
 border:1px solid rgba(255,122,0,.2);
 }
 
-/* ===== FIX IMAGE FRAME ===== */
+/* ===== 🔥 FIX TEAM (FULL FIX) ===== */
 .team-card{
+display:flex;
+flex-direction:column;
+align-items:center;
 overflow:hidden;
 }
 
+/* กรอบรูปใหญ่ขึ้นให้พอดีรูปคน */
 .img-box{
 width:100%;
-height:180px;
+max-width:280px;
+height:320px;
 overflow:hidden;
-border-radius:12px;
-margin-bottom:10px;
+border-radius:15px;
+margin-bottom:15px;
+background:#000;
 }
 
+/* รูปไม่ล้น */
 .img-box img{
 width:100%;
 height:100%;
@@ -236,6 +243,12 @@ grid-template-columns:1fr;
 font-size:24px;
 }
 
+/* ลดกรอบรูปในมือถือให้พอดี */
+.img-box{
+height:260px;
+max-width:100%;
+}
+
 }
 
 </style>
@@ -258,6 +271,7 @@ font-size:24px;
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1>IRM EXTRA</h1>
@@ -267,10 +281,12 @@ font-size:24px;
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <h2 class="section-title">เกี่ยวกับบริษัท</h2>
 
 <div class="about-container">
+
 <div class="about-image">
 <img src="CONDO.png" class="active">
 <img src="CONDO2.png">
@@ -281,9 +297,11 @@ font-size:24px;
 <h3>IRM Extra Property Management</h3>
 <p>บริษัทบริหารนิติบุคคลอาคารชุดและหมู่บ้านจัดสรรแบบครบวงจร</p>
 </div>
+
 </div>
 </section>
 
+<!-- VISION -->
 <section id="vision">
 <h2 class="section-title">วิสัยทัศน์</h2>
 <p style="text-align:center;">
@@ -291,16 +309,18 @@ font-size:24px;
 </p>
 </section>
 
+<!-- MISSION -->
 <section id="mission">
 <h2 class="section-title">พันธกิจ</h2>
 <div class="services-grid">
-<div class="service-card">พัฒนาศักยภาพบุคลากร</div>
-<div class="service-card">นำเทคโนโลยีมาใช้</div>
+<div class="service-card">พัฒนาบุคลากร</div>
+<div class="service-card">ใช้เทคโนโลยีทันสมัย</div>
 <div class="service-card">ให้ลูกค้ามีส่วนร่วม</div>
-<div class="service-card">ปลูกฝังคุณธรรม</div>
+<div class="service-card">ยึดคุณธรรม</div>
 </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
 <h2 class="section-title">บริการของเรา</h2>
 <div class="services-grid">
@@ -311,6 +331,7 @@ font-size:24px;
 </div>
 </section>
 
+<!-- TEAM -->
 <section id="team">
 <h2 class="section-title">ทีมผู้บริหาร</h2>
 
@@ -351,8 +372,10 @@ font-size:24px;
 </div>
 </section>
 
+<!-- CONTACT -->
 <section>
 <h2 class="section-title">ติดต่อเรา</h2>
+
 <div class="contact-box">
 <p>IRM Extra Property Management</p>
 <p>โทร: 09-8105-6952</p>
